@@ -1,0 +1,25 @@
+# 依赖与构建产物
+node_modules/
+release/
+dist/
+out/
+
+# 本地音乐（版权原因不提交）
+music.mp3
+*.mp3
+*.ogg
+*.wav
+*.m4a
+
+# 工具生成物
+.screenshots/
+.trae-html-share-packages/
+*.log
+npm-debug.log*
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

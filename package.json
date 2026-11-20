@@ -1,0 +1,76 @@
+{
+  "name": "neon-beat",
+  "version": "1.1.0",
+  "description": "Neon Beat - 4K 下落式音游（单文件 HTML5 Canvas）",
+  "main": "main.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "serve": "python3 -m http.server 8000",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.neonbeat.game",
+    "productName": "Neon Beat",
+    "copyright": "Copyright © 2026 Neon Beat",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "index.html",
+      "main.js",
+      "package.json",
+      "build/icon.png",
+      "build/icon.ico",
+      "build/icon.icns"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName}-${version}-setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.games"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icon.png",
+      "category": "Game",
+      "maintainer": "LJHLRJ <LJHLRJ@users.noreply.github.com>"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LJHLRJ/neon-beat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LJHLRJ/neon-beat/issues"
+  }
+}
